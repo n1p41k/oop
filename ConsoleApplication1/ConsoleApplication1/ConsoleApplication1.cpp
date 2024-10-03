@@ -1,7 +1,5 @@
 ﻿#include <iostream>
-#include <cassert>
 #include <cmath>
-
 using namespace std;
 
 //Наш код
@@ -198,7 +196,6 @@ void foo3(Fraction& g, Fraction& h, Fraction& a)
     g = g.div(h).mul(a);
     //g = 5/5 : 3/0 * 1/0 = 0/0
 }
-
 void foo()
 {
     Fraction a(1, 2), b(3, 4), c(4, 3), d(1, 1), e(3, 1), f(4, 9), g(5, 5);
@@ -209,16 +206,15 @@ void foo()
     //a = 1/0 (или 0/0)
     //g = 0/0
     //h = 3/0
-    a.reduce(); //Error: division by zero
-    g.reduce(); //Error: division by zero
-    h.reduce(); //Error: division by zero
+    a.reduce();
+    g.reduce();
+    h.reduce();
 
 }
-
 int main()
 {
     // Преобразование десятичной дроби в обыкновенную:
-    double decimal = 2.75;
+    double decimal = 2.5;
     Fraction f1 = Fraction().fromDouble(decimal, 2);
     cout << "Преобразование " << decimal << " в обыкновенную дробь: ";
     f1.print();
