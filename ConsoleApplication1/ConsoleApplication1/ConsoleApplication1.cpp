@@ -9,7 +9,6 @@ public:
     Fraction();
     Fraction(int numerator, int denominator);
     ~Fraction() = default;
-
     void print();
 
     Fraction sum(Fraction b);   //Example: c = a.sum(b)
@@ -216,31 +215,31 @@ int main()
     // Преобразование десятичной дроби в обыкновенную:
     double decimal = 2.5;
     Fraction f1 = Fraction().fromDouble(decimal, 2);
-    cout << "Преобразование " << decimal << " в обыкновенную дробь: ";
+    cout << "transformation " << decimal << " in normal fraction: ";
     f1.print();
 
     // Преобразование в смешанное число:
     Fraction f2(11, 4);
-    cout << "Преобразование " << 11 << "/4 в смешанное число: ";
+    cout << "transformation " << 11 << "/4 in mixed fraction: ";
     f2.toMixedNumber().print();
 
     // Остальной код:
     Fraction a(1, 2), b(3, 4);
 
-    cout << "Используем дроби: " << endl;
+    cout << "using fraction: " << endl;
     cout << "a: "; a.print();
     cout << "b: "; b.print();
 
-    cout << "Сумма: ";
+    cout << "summ: ";
     (a.sum(b)).print();
 
-    cout << "Разность: ";
+    cout << "difference: ";
     (a.sub(b)).print();
 
-    cout << "Произведение: ";
+    cout << "production: ";
     (a.mul(b)).print();
 
-    cout << "Частное: ";
+    cout << "quotient: ";
     (a.div(b)).print();
 
     return 0;
