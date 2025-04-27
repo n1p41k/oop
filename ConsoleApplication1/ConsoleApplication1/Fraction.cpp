@@ -54,6 +54,32 @@ Fraction Fraction::div(Fraction b)
     return result;
 }
 
+Fraction Fraction::deg(Fraction b)
+{
+    Fraction result;
+    result.numerator = numerator * b.numerator;
+    result.denominator = denominator * b.denominator;
+    result.reduce(); // Сокращение результата
+    return result;
+}
+
+Fraction Fraction::toMixedNumber(Fraction b)
+{
+    Fraction result;
+    result.numerator = numerator % b.denominator;
+    result.denominator = denominator;
+    return result;
+
+}
+
+Fraction Fraction::fromDouble(Fraction b) {
+    Fraction result;
+    result.numerator = numerator * 100 / denominator;
+    result.denominator = 100;
+    return result;
+}
+
+
 Fraction Fraction::equ(Fraction b)
 {
     Fraction result;
@@ -151,24 +177,4 @@ void Fraction::setDenominator(int value)
     }
 
     denominator = value;
-}
-
-// Новые методы:
-Fraction Fraction::fromDouble(double value, int precision)
-{
-    int integerPart = static_cast<int>(value);
-    double decimalPart = value - integerPart;
-
-    int denominator = pow(10, precision);
-    int numerator = static_cast<int>(round(decimalPart * denominator));
-
-    return Fraction(integerPart * denominator + numerator, denominator);
-}
-
-Fraction Fraction::toMixedNumber()
-{
-    int wholePart = numerator / denominator;
-    int remainder = numerator % denominator;
-
-    return Fraction(remainder, denominator);
 }

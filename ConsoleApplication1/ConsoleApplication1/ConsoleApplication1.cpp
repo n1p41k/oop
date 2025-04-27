@@ -6,47 +6,57 @@ using std::cout;
 using std::endl;
 int main()
 {
-    // Преобразование десятичной дроби в обыкновенную:
-    double decimal = 2.5;
-    Fraction f1 = Fraction().fromDouble(decimal, 2);
-    cout << "transformation " << decimal << " in normal fraction: ";
-    f1.print();
-
-    // Преобразование в смешанное число:
-    Fraction f2(11, 4);
-    cout << "transformation " << 11 << "/4 in mixed fraction: ";
-    f2.toMixedNumber().print();
-
-    // Остальной код:
-    Fraction a(1, 2), b(3, 4);
+    Fraction a(1, 2), b(3, 4), c(11,4);
 
     cout << "using fraction: " << endl;
     cout << "a: "; a.print();
     cout << "b: "; b.print();
+    cout << "c: "; c.print();
 
-    cout << "summ: ";
+    cout << "summ(a nad b): ";
     (a.sum(b)).print();
 
-    cout << "difference: ";
+    cout << "difference(a nad b): ";
     (a.sub(b)).print();
 
-    cout << "production: ";
+    cout << "production(a nad b): ";
     (a.mul(b)).print();
 
-    cout << "quotient: ";
+    cout << "quotient(a nad b): ";
     (a.div(b)).print();
 
-    cout << "equal: ";
+    cout << "equal(a nad b): ";
     (a.equ(b));
 
-    cout << "\nnot equal: ";
+    cout << "\nnot equal(a nad b): ";
     (a.nte(b));
 
-    cout << "\nGreater-than sign: ";
+    cout << "\nGreater-than sign(a nad b): ";
     (a.gts(b));
 
-    cout << "\nless-than sign: ";
+    cout << "\nless-than sign(a nad b): ";
     (a.lts(b));
+
+    cout << "\ndegree first: ";
+    (a.deg(a)).print();
+
+    cout << "degree second: ";
+    (b.deg(b)).print();
+
+    cout << "degree third: ";
+    (c.deg(c)).print();
+
+    cout << "Mixed number(c): ";
+    (c.toMixedNumber(c)).print();
+
+    cout << "fromDouble(a): ";
+    (a.fromDouble(a)).print();
+
+    cout << "fromDouble(b): ";
+    (b.fromDouble(b)).print();
+
+    cout << "fromDouble(c): ";
+    (c.fromDouble(c)).print();
 
     return 0;
 }
