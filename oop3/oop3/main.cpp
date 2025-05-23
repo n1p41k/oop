@@ -61,6 +61,15 @@ int main() {
     bv7.setBitValue(8, true);
     std::cout <<"common bv "<< bv7 << ",";
     std::cout <<"weight " << bv7.weight() << std::endl;
-
+    std::cout << "[Test 9] Shift function: ";
+    const char* bits1 = "10101011";
+    BoolVector bv8(bits1);
+    std::cout << "common bv " << bv8 << ",";
+    bv8 << 2;
+    std::cout << "shift << " << bv8 << ",";
+    bv8 >> 2;
+    std::cout << "shift >> " << bv7 << ",";
+    bv8 >>= 2;
+    std::cout << "shift >>= " << bv7 << std::endl;
     return 0;
 }
