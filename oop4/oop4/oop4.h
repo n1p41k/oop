@@ -4,15 +4,15 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
-#include "oop3.h"
-#include "oop3.cpp"
+#include "./oop3.h"
+
 
 
 
 class BoolMatrix
 {
 public:
-	BoolMatrix();
+    BoolMatrix();
 	BoolMatrix(int rows, int cols, bool value = false);
     BoolMatrix(const char** bits, int rows, int cols);
 	BoolMatrix(const BoolMatrix& other);
@@ -30,8 +30,6 @@ public:
     void invertBit(int row, int col);
     void setBit(int row, int col, bool value);
     void setBits(int row, int start, int count, bool value);
-
-    // Перегрузки
     BoolMatrix& operator=(const BoolMatrix& other);
     BoolVector& operator[](int row);
     const BoolVector& operator[](int row) const;

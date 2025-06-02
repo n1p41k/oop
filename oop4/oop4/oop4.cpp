@@ -1,5 +1,8 @@
 ﻿#include "oop4.h"
 
+BoolMatrix::BoolMatrix()
+    :m_rows(0), m_cols(0), m_matrix(nullptr)
+{}
 
 BoolMatrix::BoolMatrix(int rows, int cols, bool value)
     : m_rows(rows), m_cols(cols), m_matrix(rows ? new BoolVector[rows] : nullptr)
@@ -9,14 +12,14 @@ BoolMatrix::BoolMatrix(int rows, int cols, bool value)
 }
 
 BoolMatrix::BoolMatrix(const char** bits, int rows, int cols)
-    : BoolMatrix(rows, cols)  // делегируем основному конструктору
+    : BoolMatrix(rows, cols)  
 {
     for (int i = 0; i < rows; ++i)
         m_matrix[i] = BoolVector(bits[i]);
 }
 
 BoolMatrix::BoolMatrix(const BoolMatrix& other)
-    : BoolMatrix(other.m_rows, other.m_cols)  // делегируем основному конструктору
+    : BoolMatrix(other.m_rows, other.m_cols)  
 {
     for (int i = 0; i < m_rows; ++i)
         m_matrix[i] = other.m_matrix[i];
