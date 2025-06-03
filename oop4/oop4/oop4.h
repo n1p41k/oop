@@ -33,13 +33,10 @@ public:
     BoolMatrix& operator=(const BoolMatrix& other);
     BoolVector& operator[](int row);
     const BoolVector& operator[](int row) const;
-
     BoolMatrix operator&(const BoolMatrix& other) const;
     BoolMatrix& operator&=(const BoolMatrix& other);
-
     BoolMatrix operator|(const BoolMatrix& other) const;
     BoolMatrix& operator|=(const BoolMatrix& other);
-
     BoolMatrix operator^(const BoolMatrix& other) const;
     BoolMatrix& operator^=(const BoolMatrix& other);
 

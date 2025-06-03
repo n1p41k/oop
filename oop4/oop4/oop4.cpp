@@ -55,23 +55,6 @@ int BoolMatrix::rowWeight(int row) const
 {
     return m_matrix[row].weight();
 }
-
-BoolVector BoolMatrix::conjunction() const
-{
-    BoolVector result = m_matrix[0];
-    for (int i = 1; i < m_rows; ++i)
-        result &= m_matrix[i];
-    return result;
-}
-
-BoolVector BoolMatrix::disjunction() const
-{
-    BoolVector result = m_matrix[0];
-    for (int i = 1; i < m_rows; ++i)
-        result |= m_matrix[i];
-    return result;
-}
-
 void BoolMatrix::invertBit(int row, int col)
 {
     m_matrix[row].invertBit(col);
