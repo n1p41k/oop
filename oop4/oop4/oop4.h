@@ -23,9 +23,6 @@ public:
     void swap(BoolMatrix& other);
 
     int weight() const;
-
-    BoolVector conjunction() const;
-    BoolVector disjunction() const;
     int rowWeight(int j) const;
     void invertBit(int row, int col);
     void setBit(int row, int col, bool value);
